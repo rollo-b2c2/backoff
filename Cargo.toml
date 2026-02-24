@@ -1,6 +1,6 @@
 [package]
 name = "backoff"
-version = "0.3.1-alpha.0"
+version = "0.4.1"
 edition = "2018"
 authors = ["Tibor Benke <ihrwein@gmail.com>"]
 license = "MIT/Apache-2.0"
@@ -21,8 +21,8 @@ async_std_1 = { package = "async-std", version = "1.9", optional = true }
 futures-core = { version = "0.3.8", default-features = false, optional = true }
 instant = "0.1"
 pin-project-lite = { version = "0.2.7", optional = true }
-rand = "0.8"
-getrandom = "0.2"
+rand = "0.9"
+getrandom = "0.3"
 tokio_1 = { package = "tokio", version = "1.0", features = ["time"], optional = true }
 
 [dev-dependencies]
@@ -33,7 +33,7 @@ futures-executor = "0.3"
 
 [features]
 default = []
-wasm-bindgen = ["instant/wasm-bindgen", "getrandom/js"]
+wasm-bindgen = ["instant/wasm-bindgen", "getrandom/wasm_js"]
 futures = ["futures-core", "pin-project-lite"]
 tokio = ["futures", "tokio_1"]
 async-std = ["futures", "async_std_1"]
